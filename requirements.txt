@@ -5,6 +5,6 @@ pydantic-settings
 python-dotenv
 pandas
 numpy
-yfinance
+yfinance>=0.2.60,<1.0
 requests
 
