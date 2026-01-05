@@ -106,6 +106,9 @@ class MarketScanner:
         if top_n and top_n > 0:
             results = results[:top_n]
         
+        # Extract just the stock symbols for easy access
+        top_stocks = [r["stock"] for r in results]
+        
         return {
             "scan_summary": {
                 "total_stocks_scanned": len(stocks_to_scan),
@@ -120,6 +123,7 @@ class MarketScanner:
                     "min_trades": min_trades
                 }
             },
+            "top_stocks": top_stocks,
             "top_results": results
         }
     
