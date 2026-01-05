@@ -70,7 +70,7 @@ class TradingSimulator:
                 "final_balance": round(final_balance, 2),
                 "total_return": round(final_balance - self.initial_balance, 2),
                 "return_percentage": round(((final_balance - self.initial_balance) / self.initial_balance) * 100, 2),
-                "total_trades": len([t for t in trades if t["type"] == "SELL"]),
+                "total_trades": len(trades),  # Count all trades (BUY + SELL) for consistency with V1
                 "success_rate": stats["success_rate"],
                 "avg_days_between_trades": stats["avg_trade_frequency"],
                 "buy_indicator": buy_indicator,
